@@ -1,7 +1,43 @@
 <template>
-  <div class="hello">
-    <img src="../assets/logo.png">
-    <h1>{{ msg }}</h1>
+  <div>
+    <div class="left">
+      <div class="left-log">
+        <img src="../assets/logo.png">
+      </div>
+      <div class="dbl-project">
+        <div class="db-left-search">
+          <i class="el-icon-search"></i>
+          <input type="text" placeholder="快速查找项目" value="">
+        </div>
+        <div class="line"></div>
+        <ul>
+          <li>
+            <i class="el-icon-plus"></i>
+            创建项目
+          </li>
+          <div class="line"></div>
+          <li>
+            <i class="el-icon-information"></i>
+            项目1
+          </li>
+        </ul>
+        <div class="line"></div>
+      </div>
+    </div>
+    <div class="right">
+      <div class="nav">
+        <el-menu theme="dark" :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
+          <el-menu-item index="1">处理中心</el-menu-item>
+          <el-submenu index="2">
+            <template slot="title">我的工作台</template>
+            <el-menu-item index="2-1">选项1</el-menu-item>
+            <el-menu-item index="2-2">选项2</el-menu-item>
+            <el-menu-item index="2-3">选项3</el-menu-item>
+          </el-submenu>
+          <el-menu-item index="3"><a href="https://www.ele.me" target="_blank">订单管理</a></el-menu-item>
+        </el-menu>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -10,7 +46,7 @@ export default {
   name: 'hello',
   data () {
     return {
-      msg: 'this is a test page'
+      msg: 'this is a main page'
     }
   }
 }
@@ -18,21 +54,27 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
-  font-weight: normal;
+.left {
+  position: fixed;
+  z-index: 1000;
+  width: 250px;
+  height: 100%;
+  box-shadow: 1px 0 13px 0 #A3A3A3;
+  top: 0;
+  left: 0;
 }
 
-ul {
-  list-style-type: none;
-  padding: 0;
+.right {
+  margin-left: 250px;
 }
 
-li {
-  display: inline-block;
-  margin: 0 10px;
+.line {
+  width: 100%;
+  height: 1px;
+  background: #ddd;
 }
 
-a {
-  color: #42b983;
+.nav {
+  border-bottom: 1px solid #e1e1e1;
 }
 </style>

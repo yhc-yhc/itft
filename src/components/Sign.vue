@@ -16,7 +16,7 @@
         <el-form-item>
           <el-button type="text">忘记密码</el-button>
           <el-button type="text">免费注册</el-button>
-          <el-checkbox v-model="signForm.checked"  style="padding-left: 40px;">记住密码</el-checkbox>
+          <el-checkbox v-model="signForm.checked"  style="padding-left: 35px;">记住密码</el-checkbox>
         </el-form-item>
       </el-form>
     </el-col>
@@ -52,22 +52,3 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h1, h2 {
-  font-weight: normal;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-a {
-  color: #42b983;
-}
-</style>
