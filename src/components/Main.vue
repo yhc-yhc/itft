@@ -5,8 +5,8 @@
         <img src="../assets/logo.png">
       </div>
       <div class="dbl-project">
-        <el-menu default-active="2" class="el-menu-vertical-demo" @open=" " @close="handleClose" :router="true" :unique-opened="false">
-            <el-menu-item ><i class="el-icon-search"></i><input type="text" placeholder="快速查找项目" value=""></el-menu-item>
+        <el-menu default-active="2" class="el-menu-vertical-demo" @open=" " @close="" :router="true" :unique-opened="false">
+            <el-menu-item index=""><i class="el-icon-search"></i><input type="text" placeholder="快速查找项目" value=""></el-menu-item>
             <div class="line"></div>
             <el-menu-item index="/main/add_project"><i class="el-icon-plus"></i>创建项目</el-menu-item>
             <div class="line"></div>
@@ -14,7 +14,7 @@
             <div class="line"></div>
         </el-menu>
 
-        <el-menu default-active="2" class="el-menu-vertical-demo" @open=" " @close="handleClose" :router="true" :unique-opened="false">
+        <el-menu default-active="2" class="el-menu-vertical-demo" @open=" " @close="" :router="true" :unique-opened="false">
 
             <el-menu-item index="/main/project"><i class="el-icon-information"></i>项目1</el-menu-item>
             <div class="line"></div>
@@ -24,7 +24,7 @@
     </div>
     <div class="right">
       <div class="nav">
-        <el-menu theme="dark" :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
+        <el-menu theme="dark" class="el-menu-demo" mode="horizontal" @select="">
           <el-menu-item index="1">处理中心</el-menu-item>
           <el-submenu index="2">
             <template slot="title">我的工作台</template>

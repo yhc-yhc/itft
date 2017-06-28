@@ -1,14 +1,21 @@
 <template>
   <div class="project">
-    <el-tree
-      :data="data2"
-      :props="defaultProps"
-      show-checkbox
-      node-key="id"
-      default-expand-all
-      :expand-on-click-node="false"
-      :render-content="renderContent">
-    </el-tree>
+    <el-row>
+      <el-col :span="4">
+        <el-tree
+          :data="data2"
+          :props="defaultProps"
+          node-key="id"
+          default-expand-all
+          :expand-on-click-node="false"
+          :render-content="renderContent">
+        </el-tree>
+      </el-col>
+      <el-col :span="20">
+        aaa
+      </el-col>
+    </el-row>
+
   </div>
 </template>
 
@@ -75,8 +82,8 @@
               <span>{node.label}</span>
             </span>
             <span style="float: right; margin-right: 20px">
-              <el-button size="mini" on-click={ () => this.append(store, data) }>Append</el-button>
-              <el-button size="mini" on-click={ () => this.remove(store, data) }>Delete</el-button>
+              <el-button size="mini" on-click={ () => this.append(store, data) }>+</el-button>
+              <el-button size="mini" on-click={ () => this.remove(store, data) }><i class="el-icon-cross"></i>X</el-button>
             </span>
           </span>)
       }
