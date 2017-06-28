@@ -5,23 +5,21 @@
         <img src="../assets/logo.png">
       </div>
       <div class="dbl-project">
-        <div class="db-left-search">
-          <i class="el-icon-search"></i>
-          <input type="text" placeholder="快速查找项目" value="">
-        </div>
-        <div class="line"></div>
-        <ul>
-          <li>
-            <i class="el-icon-plus"></i>
-            创建项目
-          </li>
-          <div class="line"></div>
-          <li>
-            <i class="el-icon-information"></i>
-            项目1
-          </li>
-        </ul>
-        <div class="line"></div>
+        <el-menu default-active="2" class="el-menu-vertical-demo" @open=" " @close="handleClose" :router="true" :unique-opened="false">
+            <el-menu-item ><i class="el-icon-search"></i><input type="text" placeholder="快速查找项目" value=""></el-menu-item>
+            <div class="line"></div>
+            <el-menu-item index="/main/add_project"><i class="el-icon-plus"></i>创建项目</el-menu-item>
+            <div class="line"></div>
+            <el-menu-item index="/main/test"><i class="el-icon-plus"></i>test</el-menu-item>
+            <div class="line"></div>
+        </el-menu>
+
+        <el-menu default-active="2" class="el-menu-vertical-demo" @open=" " @close="handleClose" :router="true" :unique-opened="false">
+
+            <el-menu-item index="/main/project"><i class="el-icon-information"></i>项目1</el-menu-item>
+            <div class="line"></div>
+        </el-menu>
+
       </div>
     </div>
     <div class="right">
@@ -36,6 +34,9 @@
           </el-submenu>
           <el-menu-item index="3"><a href="https://www.ele.me" target="_blank">订单管理</a></el-menu-item>
         </el-menu>
+      </div>
+      <div class="main-view">
+        <router-view></router-view>
       </div>
     </div>
   </div>
@@ -76,5 +77,9 @@ export default {
 
 .nav {
   border-bottom: 1px solid #e1e1e1;
+}
+
+.main-view {
+  padding: 60px 0 0 80px;
 }
 </style>
