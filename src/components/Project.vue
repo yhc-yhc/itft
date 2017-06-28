@@ -1,18 +1,35 @@
 <template>
   <div class="project">
     <el-row>
-      <el-col :span="4">
-        <el-tree
-          :data="data2"
-          :props="defaultProps"
-          node-key="id"
-          default-expand-all
-          :expand-on-click-node="false"
-          :render-content="renderContent">
-        </el-tree>
-      </el-col>
-      <el-col :span="20">
-        aaa
+      <el-col :span="24">
+        <el-card class="box-card">
+          <div slot="header" class="clearfix">
+            <span style="line-height: 36px;">项目1</span>
+            <el-button style="float: right;" type="primary">操作按钮</el-button>
+          </div>
+          <el-collapse accordion="false">
+            <el-collapse-item>
+              <template slot="title">
+                access<i class="header-icon el-icon-information"></i>
+              </template>
+              <div>与现实生活一致：与现实生活的流程、逻辑保持一致，遵循用户习惯的语言和概念；</div>
+              <div>在界面中一致：所有的元素和结构需保持一致，比如：设计样式、图标和文本、元素的位置等。</div>
+            </el-collapse-item>
+            <el-collapse-item title="user">
+              <div>控制反馈：通过界面样式和交互动效让用户可以清晰的感知自己的操作；</div>
+              <div>页面反馈：操作后，通过页面元素的变化清晰地展现当前状态。</div>
+            </el-collapse-item>
+            <el-collapse-item title="dir">
+              <div>简化流程：设计简洁直观的操作流程；</div>
+              <div>清晰明确：语言表达清晰且表意明确，让用户快速理解进而作出决策；</div>
+              <div>帮助用户识别：界面简单直白，让用户快速识别而非回忆，减少用户记忆负担。</div>
+            </el-collapse-item>
+            <el-collapse-item title="photo">
+              <div>用户决策：根据场景可给予用户操作建议或安全提示，但不能代替用户进行决策；</div>
+              <div>结果可控：用户可以自由的进行操作，包括撤销、回退和终止当前操作等。</div>
+            </el-collapse-item>
+          </el-collapse>
+        </el-card>
       </el-col>
     </el-row>
 
@@ -20,80 +37,12 @@
 </template>
 
 <script>
-  let id = 1000
-  export default {
-    data () {
-      return {
-        data2: [{
-          id: 1,
-          label: '一级 1',
-          children: [{
-            id: 4,
-            label: '二级 1-1',
-            children: [{
-              id: 9,
-              label: '三级 1-1-1'
-            }, {
-              id: 10,
-              label: '三级 1-1-2'
-            }]
-          }]
-        }, {
-          id: 2,
-          label: '一级 2',
-          children: [{
-            id: 5,
-            label: '二级 2-1'
-          }, {
-            id: 6,
-            label: '二级 2-2'
-          }]
-        }, {
-          id: 3,
-          label: '一级 3',
-          children: [{
-            id: 7,
-            label: '二级 3-1'
-          }, {
-            id: 8,
-            label: '二级 3-2'
-          }]
-        }],
-        defaultProps: {
-          children: 'children',
-          label: 'label'
-        }
-      }
-    },
 
-    methods: {
-      append (store, data) {
-        store.append({ id: id++, label: 'testtest', children: [] }, data)
-      },
-
-      remove (store, data) {
-        store.remove(data)
-      },
-
-      renderContent (h, { node, data, store }) {
-        return (
-          <span>
-            <span>
-              <span>{node.label}</span>
-            </span>
-            <span style="float: right; margin-right: 20px">
-              <el-button size="mini" on-click={ () => this.append(store, data) }>+</el-button>
-              <el-button size="mini" on-click={ () => this.remove(store, data) }><i class="el-icon-cross"></i>X</el-button>
-            </span>
-          </span>)
-      }
-    }
-  }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .project {
-  margin: -60px 0 0 -80px;
+  margin: -50px 0 0 -70px;
 }
 </style>
